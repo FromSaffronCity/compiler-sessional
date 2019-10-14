@@ -1,0 +1,135 @@
+	New ScopeTable with id 1 created
+I foo FUNCTION
+
+	Not found in ScopeTable #1
+	Inserted in ScopeTable #1 at position 6, 0
+I i VAR
+
+	Not found in ScopeTable #1
+	Inserted in ScopeTable #1 at position 0, 0
+L foo
+
+	Found in ScopeTable #1 at position 6, 0
+L j
+
+	Not found in ScopeTable #1
+I 5 NUMBER
+
+	Not found in ScopeTable #1
+	Inserted in ScopeTable #1 at position 4, 0
+P A
+
+	ScopeTable #1
+	0 --> < i, VAR>
+	1 -->
+	2 -->
+	3 -->
+	4 --> < 5, NUMBER>
+	5 -->
+	6 --> < foo, FUNCTION>
+
+D j
+
+	Not found in ScopeTable #1
+	j not found (failed to delete)
+D i
+
+	Found in ScopeTable #1 at position 0, 0
+	Deleted entry at 0, 0 from current ScopeTable
+P A
+
+	ScopeTable #1
+	0 -->
+	1 -->
+	2 -->
+	3 -->
+	4 --> < 5, NUMBER>
+	5 -->
+	6 --> < foo, FUNCTION>
+
+S
+
+	New ScopeTable with id 2 created
+I <= RELOP
+
+	Not found in ScopeTable #2
+	Inserted in ScopeTable #2 at position 0, 0
+I == RELOP
+
+	Not found in ScopeTable #2
+	Inserted in ScopeTable #2 at position 1, 0
+P A
+
+	ScopeTable #2
+	0 --> < <=, RELOP>
+	1 --> < ==, RELOP>
+	2 -->
+	3 -->
+	4 -->
+	5 -->
+	6 -->
+
+	ScopeTable #1
+	0 -->
+	1 -->
+	2 -->
+	3 -->
+	4 --> < 5, NUMBER>
+	5 -->
+	6 --> < foo, FUNCTION>
+
+I <= RELOP
+
+	Found in ScopeTable #2 at position 0, 0
+	< <=, RELOP> already exists in current ScopeTable
+I foo FUNCTION
+
+	Not found in ScopeTable #2
+	Inserted in ScopeTable #2 at position 6, 0
+D ==
+
+	Found in ScopeTable #2 at position 1, 0
+	Deleted entry at 1, 0 from current ScopeTable
+P A
+
+	ScopeTable #2
+	0 --> < <=, RELOP>
+	1 -->
+	2 -->
+	3 -->
+	4 -->
+	5 -->
+	6 --> < foo, FUNCTION>
+
+	ScopeTable #1
+	0 -->
+	1 -->
+	2 -->
+	3 -->
+	4 --> < 5, NUMBER>
+	5 -->
+	6 --> < foo, FUNCTION>
+
+E
+
+	ScopeTable with id 2 removed
+I t t
+
+	Not found in ScopeTable #1
+	Inserted in ScopeTable #1 at position 4, 1
+I k k
+
+	Not found in ScopeTable #1
+	Inserted in ScopeTable #1 at position 2, 0
+P A
+
+	ScopeTable #1
+	0 -->
+	1 -->
+	2 --> < k, k>
+	3 -->
+	4 --> < 5, NUMBER> < t, t>
+	5 -->
+	6 --> < foo, FUNCTION>
+
+	ScopeTable with id 1 removed

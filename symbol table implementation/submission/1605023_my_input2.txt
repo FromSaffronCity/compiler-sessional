@@ -1,0 +1,35 @@
+4
+I foo FUNC
+I a INT
+I foo FUNC
+I foo INT
+S
+I a INT
+I foo FUNC
+P W
+P C
+L a
+D zoo
+D a
+P A
+E
+S
+I b CHAR
+I w BOOL
+P A
+S
+I foo FUNC
+I a INT
+I b CHAR
+I w BOOL
+P A
+E
+E
+I b CHAR
+I w BOOL
+I 450 NUMBER
+I == RELOP
+I & BILOP
+I || COLOP
+P A
+X
